@@ -343,5 +343,93 @@ all_btn.forEach((btn, i) => {
 
 
 
+// fade right
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate each fade-element on scroll
+gsap.utils.toArray(".fade-element").forEach((element) => {
+  gsap.fromTo(
+    element,
+    { x: -100, opacity: 0 }, // Start state
+    {
+      x: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", // Trigger when the element is 80% from the top
+        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+      },
+    }
+  );
+});
+
+
+// fade right
+
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Select and animate each element with the class "fade-left-element"
+gsap.utils.toArray(".fade-left-element").forEach((element) => {
+  gsap.fromTo(
+    element,
+    { x: 100, opacity: 0 }, // Start position off-screen and invisible
+    {
+      x: 0, // Move to original position
+      opacity: 1, // Fade to fully visible
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", // Start when element is 80% from the top of viewport
+        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+      },
+    }
+  );
+});
+
+
+// image rotate
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to("#rotatingImage", {
+            scrollTrigger: {
+                trigger: ".image-container",
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+            },
+            rotation: 1080,
+            ease: "linear",
+        });
+
+
+
+        // drop element
+        const dropElements = document.querySelectorAll('.drop-element');
+
+        dropElements.forEach((element, index) => {
+            gsap.fromTo(
+                element, {
+                    y: -200, // Start high above
+                    opacity: 0,
+                }, {
+                    y: 0, // Final position
+                    opacity: 1,
+                    duration: 1.5, // Smooth duration
+                    ease: "power2.out", // Smooth easing
+                    delay: index * 0.2, // Stagger elements
+                }
+            );
+        });
+
+
 
  
