@@ -424,7 +424,7 @@ dropElements.forEach((element, index) => {
     gsap.fromTo(
         element,
         {
-            y: -200, // Start high above
+            y: -100, // Start high above
             opacity: 0,
         },
         {
