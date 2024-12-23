@@ -2544,7 +2544,7 @@ img {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #0000007b;
+  background: #000000c7;
   top: 0px;
   left: 0px;
   content: "";
@@ -2556,10 +2556,6 @@ img {
 
   .hero-section-s2{
     background-image: url(../images/new-img/mobile-banner.webp) !important;
-  }
-  .hero-section,
-  .hero-section-s2 {
-    height: 100%;
   }
 }
 
@@ -2618,17 +2614,9 @@ img {
   }
 }
 
-.hero-section .p-style i,
-.hero-section-s2 .p-style i {
-  font-size: 25px;
-  color: #FD5B38;
-}
 
-.hero-section .title,
-.hero-section-s2 .title {
-  max-width: 1162px;
-  position: relative;
-}
+
+
 
 @media (max-width: 991px) {
 
@@ -2683,14 +2671,7 @@ img {
 }
 
 
-@media (max-width: 1199px) {
 
-  .hero-section h2,
-  .hero-section-s2 h2 {
-    font-size: 140px;
-    line-height: 170px;
-  }
-}
 
 @media (max-width: 991px) {
 
@@ -2728,7 +2709,7 @@ img {
 
   .hero-section .normal img,
   .hero-section-s2 .normal img {
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -5714,8 +5695,6 @@ img {
   align-items: center;
   justify-content: center;
   border: 0.50px solid rgb(255 255 255 / 23%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(0px); /* For Safari */
   transition: backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease; /* Smooth transition */
   border-radius: 60px;
   color: #fff;
