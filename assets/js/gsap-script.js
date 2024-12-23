@@ -44,15 +44,9 @@ $(function () {
             },
         });
 
-        const itemSplitted = new SplitText(splitTextLine, {
-            type: "lines"
-        });
-        gsap.set(splitTextLine, {
-            perspective: 400
-        });
-        itemSplitted.split({
-            type: "lines"
-        });
+        const itemSplitted = new SplitText(splitTextLine, { type: "lines" });
+        gsap.set(splitTextLine, { perspective: 400 });
+        itemSplitted.split({ type: "lines" });
         tl.from(itemSplitted.lines, {
             duration: 1,
             delay: 0.5,
@@ -78,54 +72,21 @@ $(document).ready(function () {
     if (st.length == 0) return;
     gsap.registerPlugin(SplitText);
     st.each(function (index, el) {
-        el.split = new SplitText(el, {
-            type: "lines,words,chars",
-            linesClass: "poort-line"
-        });
-        gsap.set(el, {
-            perspective: 600
-        });
+        el.split = new SplitText(el, { type: "lines,words,chars", linesClass: "poort-line" });
+        gsap.set(el, { perspective: 600 });
         if ($(el).hasClass("poort-in-right")) {
-            gsap.set(el.split.chars, {
-                opacity: 0,
-                x: "100",
-                ease: "Back.easeOut"
-            });
+            gsap.set(el.split.chars, { opacity: 0, x: "100", ease: "Back.easeOut" });
         }
         if ($(el).hasClass("poort-in-left")) {
-            gsap.set(el.split.chars, {
-                opacity: 0,
-                x: "-100",
-                ease: "circ.out"
-            });
+            gsap.set(el.split.chars, { opacity: 0, x: "-100", ease: "circ.out" });
         }
         if ($(el).hasClass("poort-in-up")) {
-            gsap.set(el.split.chars, {
-                opacity: 0,
-                y: "80",
-                ease: "circ.out"
-            });
+            gsap.set(el.split.chars, { opacity: 0, y: "80", ease: "circ.out" });
         }
         if ($(el).hasClass("poort-in-down")) {
-            gsap.set(el.split.chars, {
-                opacity: 0,
-                y: "-80",
-                ease: "circ.out"
-            });
+            gsap.set(el.split.chars, { opacity: 0, y: "-80", ease: "circ.out" });
         }
-        el.anim = gsap.to(el.split.chars, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 90%"
-            },
-            x: "0",
-            y: "0",
-            rotateX: "0",
-            scale: 1,
-            opacity: 1,
-            duration: 0.6,
-            stagger: 0.02
-        });
+        el.anim = gsap.to(el.split.chars, { scrollTrigger: { trigger: el, start: "top 90%" }, x: "0", y: "0", rotateX: "0", scale: 1, opacity: 1, duration: 0.6, stagger: 0.02 });
     });
 });
 
@@ -179,6 +140,7 @@ function scroll_animations() {
                 trigger: box,
                 once: defaults.once,
                 start: "top bottom+=20%",
+                // start: "top bottom+=5%",
                 toggleActions: "play none none reverse",
                 markers: !1,
             },
@@ -195,10 +157,7 @@ scroll_animations();
 
 let device_width = window.innerWidth;
 
-gsap.set(".fade_bottom", {
-    y: 30,
-    opacity: 0
-});
+gsap.set(".fade_bottom", { y: 30, opacity: 0 });
 
 if (device_width < 1023) {
     const fadeArray = gsap.utils.toArray(".fade_bottom");
@@ -253,9 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        tl.set(new_class_name_element, {
-            autoAlpha: 1
-        });
+        tl.set(new_class_name_element, { autoAlpha: 1 });
         tl.from(new_class_name_element, 1.5, {
             xPercent: -100,
             ease: Power2.out
@@ -350,7 +307,8 @@ class HoverButton {
 const all_btns = gsap.utils.toArray(".btn-wrapper");
 if (all_btns.length > 0) {
     var all_btn = gsap.utils.toArray(".btn-wrapper");
-} else {
+}
+else {
     var all_btn = gsap.utils.toArray("#btn-wrapper");
 }
 
@@ -359,7 +317,6 @@ all_btn.forEach((btn, i) => {
     $(btn).mousemove(function (e) {
         callParallax(e);
     });
-
     function callParallax(e) {
         parallaxIt(e, all_btn_cirlce[i], 80);
     }
@@ -388,54 +345,52 @@ all_btn.forEach((btn, i) => {
 
 // fade right
 
-
+// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-l
+// Animate each fade-element on scroll
 gsap.utils.toArray(".fade-element").forEach((element) => {
-    gsap.fromTo(
-        element, {
-            x: -100,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: element,
-                start: "top 80%",
-                toggleActions: "play none none reverse",
-            },
-        }
-    );
+  gsap.fromTo(
+    element,
+    { x: -100, opacity: 0 }, // Start state
+    {
+      x: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", // Trigger when the element is 80% from the top
+        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+      },
+    }
+  );
 });
 
 
 // fade right
 
 
-
+// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-
+// Select and animate each element with the class "fade-left-element"
 gsap.utils.toArray(".fade-left-element").forEach((element) => {
-    gsap.fromTo(
-        element, {
-            x: 100,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1.5,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: element,
-                start: "top 80%",
-                toggleActions: "play none none reverse",
-            },
-        }
-    );
+  gsap.fromTo(
+    element,
+    { x: 100, opacity: 0 }, // Start position off-screen and invisible
+    {
+      x: 0, // Move to original position
+      opacity: 1, // Fade to fully visible
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", // Start when element is 80% from the top of viewport
+        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+      },
+    }
+  );
 });
 
 
@@ -444,52 +399,54 @@ gsap.utils.toArray(".fade-left-element").forEach((element) => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to("#rotatingImage", {
-    scrollTrigger: {
-        trigger: ".image-container",
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-    },
-    rotation: 1080,
-    ease: "linear",
-});
+        gsap.to("#rotatingImage", {
+            scrollTrigger: {
+                trigger: ".image-container",
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+            },
+            rotation: 1080,
+            ease: "linear",
+        });
 
 
 
-// drop element
-
+        // drop element
+   // Ensure GSAP and ScrollTrigger are loaded
 gsap.registerPlugin(ScrollTrigger);
 
 const dropElements = document.querySelectorAll('.drop-element');
 
 dropElements.forEach((element, index) => {
     gsap.fromTo(
-        element, {
-            y: -200,
+        element,
+        {
+            y: -200, // Start high above
             opacity: 0,
-        }, {
-            y: 0,
+        },
+        {
+            y: 0, // Final position
             opacity: 1,
-            duration: 2,
-            ease: "power2.out",
-            delay: index * 0.2,
+            duration: 2, // Smooth duration
+            ease: "power2.out", // Smooth easing
+            delay: index * 0.2, // Stagger elements
             scrollTrigger: {
-                trigger: element,
-                start: "top 80%",
-                end: "top 20%",
-                toggleActions: "play none none none",
+                trigger: element, // Element to trigger animation
+                start: "top 80%", // When the top of the element is 80% from the top of the viewport
+                end: "top 20%", // End trigger point
+                toggleActions: "play none none none", // Animation behavior on enter/leave
                 onLeave: () => {
-
+                    // Scroll out hide animation
                     gsap.to(element, {
-                        y: 200,
+                        y: 200, // Move downward
                         opacity: 0,
                         duration: 1.5,
                         ease: "power2.in",
                     });
                 },
                 onEnterBack: () => {
-
+                    // Smooth transition back in
                     gsap.to(element, {
                         y: 0,
                         opacity: 1,
@@ -501,3 +458,9 @@ dropElements.forEach((element, index) => {
         }
     );
 });
+
+
+
+
+
+ 
