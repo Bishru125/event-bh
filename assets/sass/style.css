@@ -2556,6 +2556,7 @@ img {
 
   .hero-section-s2{
     background-image: url(../images/new-img/mobile-banner.webp) !important;
+    background-size: contain !important;
   }
 }
 
@@ -2800,30 +2801,6 @@ img {
   z-index: -1;
 }
 
-@media (max-width: 991px) {
-
-  .hero-section .start,
-  .hero-section-s2 .start {
-    display: none;
-  }
-}
-
-.hero-section .content_middle,
-.hero-section-s2 .content_middle {
-  max-width: 353px;
-  max-height: 401px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-.hero-section .content_middle img,
-.hero-section-s2 .content_middle img {
-  transform: rotate(-15.259deg);
-  filter: blur(5px);
-}
 
 .hero-section .bg-shape,
 .hero-section-s2 .bg-shape {
@@ -2847,7 +2824,7 @@ img {
 
   .hero-section .round-shape,
   .hero-section-s2 .round-shape {
-    display: none;
+    display: block;
   }
 }
 
@@ -2950,7 +2927,11 @@ img {
 
 @media (max-width: 991px) {}
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+  .x-fav-icon{
+    width: 25px;
+  }
+}
 
 @media (max-width: 575px) {
   .hero-section-s2 h2 {

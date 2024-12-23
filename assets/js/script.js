@@ -414,16 +414,7 @@
     /*------------------------------------------
         = Testimonial SLIDER
     -------------------------------------------*/
-    if ($(".testimonial-slider-s2").length) {
-        $('.testimonial-slider-s2').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: false,
-            autoplay: true,
-        });
-    }
-
+    
 
     // work slider 
     if ('.project-slider-active') {
@@ -480,7 +471,7 @@
         $(".video-slide").owlCarousel({
             smartSpeed: 500,
             autoplay: true, // Enable autoplay
-            autoplayTimeout: 3000,
+            autoplayTimeout: 5000,
             margin: 30,
             loop: true,
             nav: false,
