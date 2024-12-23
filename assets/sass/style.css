@@ -2599,13 +2599,13 @@ img {
   height: 100vh;
   background-image: url(../images/new-img/banner.webp) !important;
   background-repeat: no-repeat !important;
-  background-size: cover !important;
+  background-size: 100% !important;
   background: #040402;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background-position: center;
+  background-position: 100%;
   overflow: hidden;
   padding: 0px 300px;
   background-attachment: fixed;
@@ -3787,7 +3787,7 @@ img {
 
 .footer-section .widget-social li a:hover,
 .footer-section-s3 .widget-social li a:hover {
-  color: #BAE900;
+  color: var(--primary-color);
 }
 
 .footer-section .widget-newsletter .newsletter .form-fild,
@@ -4360,7 +4360,7 @@ img {
 }
 
 .footer-section-s2 .widget-social li a:hover {
-  color: #BAE900;
+  color: var(--primary-color);
 }
 
 /* footer-section-s3 */
@@ -4641,7 +4641,7 @@ img {
 }
 
 .footer-section-s3 .widget-social li a:hover {
-  color: #BAE900;
+  color: var(--primary-color);
 }
 
 .footer-section-s3 .f-shape {
@@ -5783,7 +5783,8 @@ img {
   justify-content: center;
   border: 0.50px solid rgb(255 255 255 / 23%);
   backdrop-filter: blur(10px);
-  background: rgb(255 255 255 / 0%);
+  -webkit-backdrop-filter: blur(0px); /* For Safari */
+  transition: backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease; /* Smooth transition */
   border-radius: 60px;
   color: #fff;
   font-weight: 400;
@@ -5791,7 +5792,7 @@ img {
   font-size: 20px;
   min-height: 75px;
   transition: all 0.3s ease-in-out;
-  will-change: transform, backdrop-filter;
+  will-change: backdrop-filter; /* Optimizes performance */
 }
 
 

@@ -197,7 +197,6 @@ if (device_width < 1023) {
 
 
 /* imager scroll animation */
-
 document.addEventListener('DOMContentLoaded', function () {
     let new_class_name_elements = document.querySelectorAll(".new_img-animet");
     new_class_name_elements.forEach((new_class_name_element) => {
@@ -208,20 +207,23 @@ document.addEventListener('DOMContentLoaded', function () {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: new_class_name_element,
-                start: "top 50%",
-            }
+                start: "top 80%", // Adjust start position as needed
+                end: "bottom 20%", // Optionally add an end position
+                toggleActions: "play reverse play reverse", // Ensures animation replays on scroll
+                markers: false, // Set to true for debugging
+            },
         });
 
         tl.set(new_class_name_element, { autoAlpha: 1 });
         tl.from(new_class_name_element, 1.5, {
             xPercent: -100,
-            ease: Power2.out
+            ease: Power2.out,
         });
         tl.from(image, 1.5, {
             xPercent: 100,
             scale: 1.3,
             delay: -1.5,
-            ease: Power2.out
+            ease: Power2.out,
         });
     });
 });
