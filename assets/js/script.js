@@ -446,23 +446,26 @@
     /*------------------------------------------
         = POST SLIDER
     -------------------------------------------*/
-    if ($(".post-slider".length)) {
+    if ($(".post-slider").length) {
         $(".post-slider").owlCarousel({
-            smartSpeed: 500,
+            smartSpeed: 500, // Speed of the slide transition
             margin: 30,
-            loop: true,
+            loop: true, // Enable looping
             nav: false,
             dots: true,
-            items: 5,
+            autoplay: true, // Enable autoplay
+            autoplayTimeout: 3000, // Time (in ms) between slides
+            autoplayHoverPause: true, // Pause autoplay on hover
+            items: 5, // Default number of items
             responsive: {
                 0: {
                     items: 1,
                 },
                 767: {
-                    items: 1
+                    items: 1,
                 },
                 992: {
-                    items: 3
+                    items: 3,
                 }
             }
         });
@@ -476,6 +479,8 @@
     if ($(".video-slide".length)) {
         $(".video-slide").owlCarousel({
             smartSpeed: 500,
+            autoplay: true, // Enable autoplay
+            autoplayTimeout: 3000,
             margin: 30,
             loop: true,
             nav: false,
