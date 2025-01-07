@@ -476,6 +476,7 @@
             loop: true,
             nav: false,
             dots: true,
+            autoplayHoverPause:true,
             items: 5,
             responsive: {
                 0: {

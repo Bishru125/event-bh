@@ -461,6 +461,8 @@ dropElements.forEach((element, index) => {
     );
 });
 
+// on scroll slider
+
 
 
 
