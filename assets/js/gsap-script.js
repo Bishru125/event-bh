@@ -198,7 +198,10 @@ if (device_width < 1023) {
 
 /* imager scroll animation */
 document.addEventListener('DOMContentLoaded', function () {
+    gsap.registerPlugin(ScrollTrigger);
+
     let new_class_name_elements = document.querySelectorAll(".new_img-animet");
+
     new_class_name_elements.forEach((new_class_name_element) => {
         let image = new_class_name_element.querySelector("img");
 
@@ -207,26 +210,29 @@ document.addEventListener('DOMContentLoaded', function () {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: new_class_name_element,
-                start: "top 80%", // Adjust start position as needed
-                end: "bottom 20%", // Optionally add an end position
-                toggleActions: "play reverse play reverse", // Ensures animation replays on scroll
-                markers: false, // Set to true for debugging
+                start: "top 80%", // Trigger animation when the element is in view
+                end: "bottom 20%", // Optional, specify end point
+                toggleActions: "play reverse play reverse", // Reverses animation on scroll
+                markers: false, // Set to true to debug
             },
         });
 
-        tl.set(new_class_name_element, { autoAlpha: 1 });
-        tl.from(new_class_name_element, 1.5, {
+        tl.set(new_class_name_element, { autoAlpha: 1 }); // Ensure visibility
+        tl.from(new_class_name_element, {
             xPercent: -100,
-            ease: Power2.out,
+            duration: 1.5,
+            ease: "power2.out",
         });
-        tl.from(image, 1.5, {
+        tl.from(image, {
             xPercent: 100,
             scale: 1.3,
+            duration: 1.5,
+            ease: "power2.out",
             delay: -1.5,
-            ease: Power2.out,
         });
     });
 });
+
 
 
 

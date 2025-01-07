@@ -3992,9 +3992,9 @@ img {
 }
 
 .footer-section-s2 .left-widget {
-  width: 50%;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 @media (max-width: 991px) {
@@ -4011,8 +4011,6 @@ img {
 }
 
 .footer-section-s2 .widget-contact {
-  width: 50%;
-  max-width: 253px;
   margin-bottom: 15px;
 }
 
@@ -5648,6 +5646,14 @@ img {
   margin-bottom: 90px;
 }
 
+@media (max-width: 1024px) {
+
+  .work-section .item p{
+    margin-bottom: 30px;
+    height: 120px;
+  }
+}
+
 @media (max-width: 991px) {
   .work-section .item p {
     margin-bottom: 30px;
@@ -5854,6 +5860,9 @@ img {
   .drop-element h4 {
     min-height: 60px;
   }
+  .service-card-s3{
+    min-height: 300px;
+  }
 }
 
 
@@ -5881,6 +5890,14 @@ img {
     padding: 0px;
   }
 }
+
+
+@media (max-width: 1199px) {
+  .service-card-s3{
+    min-height: 350px;
+  }
+}
+
 
 @media (max-width: 991px) {
   .banner-points h4 {
@@ -5965,5 +5982,27 @@ img {
 
   .hero-section-s2 .text-stroke{
     font-size: 40px;
+  }
+  .partners-section ul li img{
+    width: 280px;
+  }
+
+  .section-padding-footer{
+    padding: 30px 0px;
+  }
+  .widget-contact img{
+    margin-bottom: 0px;
+  }
+  .footer-section-s2 .widget-contact{
+    margin-bottom: 10px;
+  }
+  .service-card-s3 {
+    min-height: 270px;
+  }
+  .project-title a span{
+    font-size: 20px;
+  }
+  .project-title a i {
+    font-size: 19px;
   }
 }
