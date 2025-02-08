@@ -6013,8 +6013,8 @@ img {
   display: block;
 }
 
-.iti__country-list{
-  position: relative;
+.iti-mobile .iti--container{
+  position: absolute;
   z-index: 9999999999;
 }
 
