@@ -16,29 +16,6 @@
     <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
     <link href="assets/sass/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-
-    <script>
-        // Initialize intl-tel-input
-        const input = document.querySelector("#phone");
-        window.intlTelInput(input, {
-          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // Utility script for formatting/validation
-          preferredCountries: ['us', 'gb', 'ca'], // Optional: Set preferred countries
-          separateDialCode: true, // Optional: Show dial code separately
-          initialCountry: "auto", // Optional: Auto-detect user's country
-          geoIpLookup: function(callback) {
-            fetch("https://ipapi.co/json")
-              .then(function(response) {
-                return response.json();
-              })
-              .then(function(data) {
-                callback(data.country_code);
-              })
-              .catch(function() {
-                callback("us"); // Fallback country
-              });
-          },
-        });
-      </script>
 </head>
 
 <body>
@@ -639,7 +616,28 @@
     <script src="assets/js/intl-tel.js"></script>
 
 
-    
+    <script>
+        // Initialize intl-tel-input
+        const input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // Utility script for formatting/validation
+          preferredCountries: ['us', 'gb', 'ca'], // Optional: Set preferred countries
+          separateDialCode: true, // Optional: Show dial code separately
+          initialCountry: "auto", // Optional: Auto-detect user's country
+          geoIpLookup: function(callback) {
+            fetch("https://ipapi.co/json")
+              .then(function(response) {
+                return response.json();
+              })
+              .then(function(data) {
+                callback(data.country_code);
+              })
+              .catch(function() {
+                callback("us"); // Fallback country
+              });
+          },
+        });
+      </script>
 
 
 </body>
